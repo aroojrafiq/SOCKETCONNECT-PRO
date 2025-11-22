@@ -1,0 +1,260 @@
+/* --- GLOBAL RESETS --- */
+body { margin: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; color: #333; scroll-behavior: smooth; }
+.App { display: flex; height: 100vh; width: 100vw; overflow: hidden; }
+
+/* --- LANDING PAGE STYLES --- */
+.landing-page { width: 100%; overflow-x: hidden; }
+
+/* Navbar */
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 20px 50px; background: rgba(255,255,255,0.95); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.logo { font-size: 1.5rem; font-weight: bold; color: #00a884; }
+.nav-links a { margin: 0 15px; text-decoration: none; color: #555; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover { color: #00a884; }
+.nav-btn { padding: 8px 20px; background: #00a884; color: white; border: none; border-radius: 20px; cursor: pointer; font-weight: bold; }
+
+/* Hero Section */
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); /* Deep Tech Gradient */
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero h1 { font-size: 3.5rem; margin-bottom: 20px; max-width: 800px; line-height: 1.2; }
+.hero p { font-size: 1.2rem; opacity: 0.9; max-width: 600px; margin-bottom: 40px; }
+.badge { background: rgba(255,255,255,0.1); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; margin-bottom: 20px; display: inline-block; border: 1px solid rgba(255,255,255,0.2); }
+
+/* Hero Login Box */
+.hero-login-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 10px;
+  border-radius: 50px;
+  display: flex;
+  gap: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 50px;
+}
+
+.hero-login-box input { padding: 15px 20px; border-radius: 40px; border: none; outline: none; width: 250px; font-size: 1rem; }
+.hero-login-box button { padding: 15px 30px; border-radius: 40px; border: none; background: #00a884; color: white; font-weight: bold; cursor: pointer; font-size: 1rem; transition: transform 0.2s; }
+.hero-login-box button:hover { transform: scale(1.05); background: #008f6f; }
+
+/* Stats */
+.hero-stats { display: flex; gap: 50px; margin-top: 20px; }
+.stat { text-align: center; }
+.stat strong { display: block; font-size: 2rem; }
+.stat small { opacity: 0.7; }
+
+/* Features Grid */
+.features-section { padding: 80px 50px; background: white; text-align: center; }
+.section-subtitle { max-width: 600px; margin: 0 auto 50px auto; color: #666; }
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+.feature-card { padding: 30px; border-radius: 15px; background: #f9f9f9; transition: transform 0.3s; border: 1px solid #eee; }
+.feature-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.icon { font-size: 2.5rem; margin-bottom: 20px; }
+
+/* Testimonials */
+.testimonials-section { padding: 80px 50px; background: #f0f2f5; text-align: center; }
+.testimonials-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; margin-top: 40px; }
+.review-card { background: white; padding: 30px; border-radius: 15px; max-width: 350px; text-align: left; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+.review-card p { font-style: italic; color: #555; margin-bottom: 20px; }
+.review-card h4 { margin: 0; color: #333; }
+.review-card small { color: #888; }
+
+/* Footer */
+.footer { background: #111; color: #aaa; padding: 60px 50px 20px 50px; }
+.footer-cols { display: flex; justify-content: space-between; max-width: 1200px; margin: 0 auto 40px auto; flex-wrap: wrap; gap: 40px; }
+.footer h3 { color: white; margin-top: 0; }
+.footer h4 { color: white; margin-bottom: 20px; }
+.footer a { display: block; color: #aaa; text-decoration: none; margin-bottom: 10px; transition: color 0.2s; }
+.footer a:hover { color: white; }
+.footer-bottom { border-top: 1px solid #333; text-align: center; padding-top: 20px; }
+
+/* --- CHAT UI STYLES (Logged In) --- */
+.sidebar { width: 30%; background-color: #ffffff; border-right: 1px solid #ddd; display: flex; flex-direction: column; }
+.sidebar h3 { background-color: #f0f2f5; margin: 0; padding: 20px; color: #54656f; }
+.sidebar ul { list-style: none; padding: 0; margin: 0; overflow-y: auto; }
+.sidebar li { padding: 15px; border-bottom: 1px solid #f0f0f0; cursor: pointer; transition: background 0.2s; color: #111b21; }
+.sidebar li:hover { background-color: #f5f6f6; }
+.sidebar li.active-user { background-color: #f0f2f5; font-weight: bold; border-left: 4px solid #00a884; }
+.chat-window { width: 70%; display: flex; flex-direction: column; background-image: url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png'); background-color: #efe7dd; }
+.chat-header { background-color: #f0f2f5; padding: 15px 20px; border-bottom: 1px solid #d1d7db; }
+.chat-header h3 { margin: 0; color: #111b21; }
+.chat-body { flex: 1; padding: 20px; overflow-y: auto; display: flex; flex-direction: column; }
+.message { max-width: 60%; padding: 8px 12px; margin: 4px; border-radius: 8px; position: relative; word-wrap: break-word; box-shadow: 0 1px 0.5px rgba(0,0,0,0.13); font-size: 14.2px; }
+.my-message { align-self: flex-end; background-color: #d9fdd3; }
+.other-message { align-self: flex-start; background-color: #ffffff; }
+.system-message { align-self: center; background-color: #e1f3fb; font-size: 12px; color: #555; padding: 5px 15px; border-radius: 20px; box-shadow: none; margin: 10px 0; }
+.msg-meta { font-size: 11px; color: #667781; font-weight: bold; margin-bottom: 2px; display: block; }
+.chat-footer { padding: 10px 16px; background-color: #f0f2f5; display: flex; align-items: center; }
+.chat-footer form { display: flex; width: 100%; }
+.chat-footer input { flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #fff; outline: none; font-size: 15px; }
+.chat-footer button { margin-left: 10px; padding: 10px 20px; background-color: #00a884; color: white; border: none; border-radius: 50%; cursor: pointer; font-weight: bold; }
+/* --- MODAL STYLES --- */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px);
+}
+
+.modal-glass {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-glass h3 { color: #00a884; margin-top: 0; }
+.modal-glass p { color: #333; font-size: 1.1rem; margin: 20px 0; }
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.btn-cancel {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  background: transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #555;
+}
+.btn-cancel:hover { background: #eee; }
+
+.btn-confirm {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  background: #00a884;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-confirm:hover { background: #008f6f; }
+/* --- NEW MODAL & DELETE STYLES --- */
+
+/* Input inside the Create Room Modal */
+.modal-input {
+  width: 85%;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 15px 0;
+  font-size: 16px;
+  outline: none;
+}
+.modal-input:focus {
+  border-color: #00a884;
+  box-shadow: 0 0 5px rgba(0, 168, 132, 0.3);
+}
+
+/* Plus Button Styling */
+.add-room-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #54656f;
+  transition: transform 0.2s, color 0.2s;
+}
+.add-room-btn:hover {
+  color: #00a884;
+  transform: scale(1.1) rotate(90deg);
+}
+
+/* Delete Trash Icon */
+.delete-icon {
+  font-size: 1rem;
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.2s;
+  padding: 5px;
+  border-radius: 50%;
+}
+
+.delete-icon:hover {
+  background-color: #ffebeb;
+  transform: scale(1.1);
+}
+
+/* Show trash icon when hovering over the room name */
+li:hover .delete-icon {
+  opacity: 1;
+  color: red;
+}
+/* --- VIDEO CALL STYLES --- */
+
+.video-call-btn {
+  background-color: #128C7E;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.video-call-btn:hover {
+  background-color: #075e54;
+}
+
+/* Video Modal Specifics */
+.video-call-modal {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-preview-box {
+  width: 300px;
+  height: 225px;
+  background: #000;
+  margin: 15px 0;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #333;
+}
+
+.live-video-feed {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top: 4px solid #00a884;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
